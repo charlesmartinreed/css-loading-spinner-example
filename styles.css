@@ -19,13 +19,16 @@ html {
   justify-content: center;
   align-items: center;
 
-  --rotate-rate-blue: 2s;
-  --rotate-rate-green: 3s;
-  --rotate-rate-red: 1.5s;
+  --rotate-duration-blue: 2s;
+  --rotate-duration-green: 3s;
+  --rotate-duration-red: 1.5s;
 
   --rotate-easing-blue: ease-out;
   --rotate-easing-green: ease-in-out;
   --rotate-easing-red: ease-in;
+
+  --fade-duration: 3s;
+  --fade-easing: ease-in-out;
 }
 
 /* SPINNER STYLES */
@@ -46,7 +49,7 @@ html {
   font-weight: 700;
   color: #333;
 
-  animation: fade 3s ease-in-out infinite alternate;
+  animation: fade var(--fade-duration) var(--fade-easing) infinite alternate;
 }
 
 .spinner-sector {
@@ -65,17 +68,19 @@ html {
 
 .spinner-sector-blue {
   border-top: 15px solid #175676;
-  animation: rotate var(--rotate-rate-blue) var(--rotate-easing-blue) infinite;
+  animation: rotate var(--rotate-duration-blue) var(--rotate-easing-blue)
+    infinite;
 }
 
 .spinner-sector-red {
   border-top: 15px solid #d62839;
-  animation: rotate var(--rotate-rate-red) var(--rotate-easing-red) infinite;
+  animation: rotate var(--rotate-duration-red) var(--rotate-easing-red) infinite;
 }
 
 .spinner-sector-green {
   border-top: 15px solid #2e933c;
-  animation: rotate var(--rotate-rate-green) var(--rotate-easing-green) infinite;
+  animation: rotate var(--rotate-duration-green) var(--rotate-easing-green)
+    infinite;
 }
 
 /* ANIMATIONS */
