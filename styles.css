@@ -12,7 +12,7 @@
 }
 
 html {
-  background-color: #e0e0e0;
+  background-color: #dfdfdf;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,9 +21,9 @@ html {
 
   --rotate-rate-blue: 2s;
   --rotate-rate-green: 3s;
-  --rotate-rate-red: 1s;
+  --rotate-rate-red: 1.5s;
 
-  --rotate-easing-blue: linear;
+  --rotate-easing-blue: ease-out;
   --rotate-easing-green: ease-in-out;
   --rotate-easing-red: ease-in;
 }
@@ -45,6 +45,8 @@ html {
   font-size: 1.6rem;
   font-weight: 700;
   color: #333;
+
+  animation: fade 3s ease-in-out infinite alternate;
 }
 
 .spinner-sector {
@@ -56,6 +58,9 @@ html {
 
   /* by making the other borders transparent, we create the hard lines we want in our animated circle */
   border: 15px solid transparent;
+
+  /* this is how we create the color blending effect */
+  mix-blend-mode: difference;
 }
 
 .spinner-sector-blue {
@@ -81,5 +86,17 @@ html {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0.1;
+    transform: scale(1.2);
   }
 }
