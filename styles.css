@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html {
+  background-color: #c3c3c3;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SPINNER STYLES */
+
+.spinner {
+  height: 250px;
+  width: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.spinner-text {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.spinner-sector {
+  border-radius: 50%;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  /* by making the other borders transparent, we create the hard lines we want in our animated circle */
+  border: 15px solid transparent;
+}
+
+.spinner-sector-blue {
+  border-top: 15px solid lightblue;
+}
+
+.spinner-sector-red {
+  border-top: 15px solid lightcoral;
+}
+
+.spinner-sector-green {
+  border-top: 15px solid lightgreen;
+}
