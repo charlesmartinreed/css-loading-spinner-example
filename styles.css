@@ -12,12 +12,20 @@
 }
 
 html {
-  background-color: #c3c3c3;
+  background-color: #e0e0e0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  --rotate-rate-blue: 2s;
+  --rotate-rate-green: 3s;
+  --rotate-rate-red: 1s;
+
+  --rotate-easing-blue: linear;
+  --rotate-easing-green: ease-in-out;
+  --rotate-easing-red: ease-in;
 }
 
 /* SPINNER STYLES */
@@ -35,6 +43,7 @@ html {
 
 .spinner-text {
   font-size: 1.6rem;
+  font-weight: 700;
   color: #333;
 }
 
@@ -50,13 +59,27 @@ html {
 }
 
 .spinner-sector-blue {
-  border-top: 15px solid lightblue;
+  border-top: 15px solid #175676;
+  animation: rotate var(--rotate-rate-blue) var(--rotate-easing-blue) infinite;
 }
 
 .spinner-sector-red {
-  border-top: 15px solid lightcoral;
+  border-top: 15px solid #d62839;
+  animation: rotate var(--rotate-rate-red) var(--rotate-easing-red) infinite;
 }
 
 .spinner-sector-green {
-  border-top: 15px solid lightgreen;
+  border-top: 15px solid #2e933c;
+  animation: rotate var(--rotate-rate-green) var(--rotate-easing-green) infinite;
+}
+
+/* ANIMATIONS */
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
